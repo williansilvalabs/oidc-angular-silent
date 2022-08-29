@@ -409,14 +409,14 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
             };
 
             var trySilentLogin = function() {
-                
+                console.log('linha 1')
                 var url = createLoginUrl('dummynonce', 'refresh');
-                
-                var html = "<iframe src='" + url + "' height='400' width='100%' id='oauthFrame' style='display:none;visibility:hidden;'></iframe>";
+                console.log('linha 2')
+                var html = "<iframe src='" + url + "' height='400' width='100%' id='oauthFrameSilentLogin' style='display:none;visibility:hidden;'></iframe>";
                 var elem = angular.element(html);
-                
+                console.log('Colocar variavel')
                 $document.find("body").append(elem);
-                debugger;
+                console.log('apend form')
             };
 
 
