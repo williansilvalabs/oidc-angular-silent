@@ -416,10 +416,7 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
                 var elem = angular.element(html);
                 
                 $document.find("body").append(elem);
-                setTimeout(function() {
-                    $document.find("#oauthFrame").autosubmit();
-                    $document.find("#oauthFrame").remove();
-                }, 1000);
+                debugger;
             };
 
 
