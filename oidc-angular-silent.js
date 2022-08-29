@@ -408,6 +408,21 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
                 }, 5000);
             };
 
+            var trySilentLogin = function() {
+                
+                var url = createLoginUrl('dummynonce', 'refresh');
+                
+                var html = "<iframe src='" + url + "' height='400' width='100%' id='oauthFrame' style='display:none;visibility:hidden;'></iframe>";
+                var elem = angular.element(html);
+                
+                $document.find("body").append(elem);
+                $document.subm
+                setTimeout(function() {
+                    $document.find("#oauthFrame").autosubmit();
+                    $document.find("#oauthFrame").remove();
+                }, 1000);
+            };
+
 
             var handleSignInCallback = function(data) {
                 
@@ -501,8 +516,11 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
                 
                 silentRefresh : function() {
                     trySilentRefresh();
-                }
-              
+                },
+
+                trySilentLogin : function() {
+                    trySilentLogin();
+                },
             };
         }]
     };
