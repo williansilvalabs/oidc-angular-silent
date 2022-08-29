@@ -238,7 +238,10 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
         endSessionEndpoint:     'connect/endsession',
         advanceRefresh:         300,
         enableRequestChecks:    false,
-        stickToLastKnownIdp:    false
+        stickToLastKnownIdp:    false,
+        grantType:              '',
+        username:               '',
+        password:               ''
       };
 
     return {
@@ -287,7 +290,15 @@ oidcmodule.provider("$auth", ['$routeProvider', function ($routeProvider) {
                                   + "&scope=" 
                                   + encodeURIComponent(config.scope)
                                   + "&nonce=" 
-                                   + encodeURIComponent(nonce);
+                                  + encodeURIComponent(nonce);
+                if (config.grantType !== '') {
+                    url = url + "&username=" 
+                    + encodeURIComponent(config.username)
+                    + "&password=" 
+                    + encodeURIComponent(config.password)
+                    + "&grant_type=" 
+                    + encodeURIComponent(config.grantType);
+                }
 
                 if (config.stickToLastKnownIdp && idpClaimValue) {
                     url = url + "&acr_values="

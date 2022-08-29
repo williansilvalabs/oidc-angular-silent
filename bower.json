@@ -1,11 +1,11 @@
 {
-  "name": "oidc-angular",
-  "version": "0.0.9",
+  "name": "oidc-angular-silent",
+  "version": "0.0.1",
   "authors": [
-    "Michael Schnyder <michael.schnyder@zuehlke.com>"
+    "William Silva <willardanuy@gmail.com>"
   ],
   "description": "OpenId Connect for AngularJS",
-  "main": "oidc-angular.js",
+  "main": "oidc-angular-silent.js",
   "license": "MIT",
   "dependencies": {
     "angular": "~1.3.15",

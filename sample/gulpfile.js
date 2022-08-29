@@ -8,7 +8,7 @@ gulp.task('serve', function() {
         server: {
             baseDir: "./",
         routes: {
-            "/oidc-angular.js": "../oidc-angular.js"
+            "/oidc-angular-silent.js": "../oidc-angular-silent.js"
         }        
         },
 
